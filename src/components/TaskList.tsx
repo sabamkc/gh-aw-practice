@@ -26,6 +26,10 @@ export function TaskList({ initialTasks = [] }: Props) {
         setTasks(tasks.map(t => t.id === id ? { ...t, done: !t.done } : t))
     }
 
+    function markAllDone() {
+        setTasks(tasks.map(t => ({ ...t, done: true })))
+    }
+
     return (
         <div>
             <h1>Task Manager</h1>

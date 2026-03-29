@@ -16,6 +16,7 @@ export function TaskList({ initialTasks = [] }: Props) {
     function deleteTask(id: number) {
         setTasks(tasks.filter(t => t.id === id))  // ← intentional bug: should be t.id !== id
     }
+    console.log('bye bye');
     function addTask() {
         if (!input.trim()) return
         setTasks([...tasks, { id: Date.now(), title: input.trim(), done: false }])
